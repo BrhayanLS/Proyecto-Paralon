@@ -32,7 +32,11 @@ public class ControllerClientes implements Serializable {
     
     //CREATE
     public void guardarCliente(){
-        cliproFacade.create(clipro);
+        try{
+            cliproFacade.create(clipro);
+        }catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
     //READ
     public List<ClienteProveedor> listaClientes(){
@@ -46,7 +50,7 @@ public class ControllerClientes implements Serializable {
     
     public String actualizarCliente(){
         this.cliproFacade.edit(clipro);
-        this.clipro = clipro;
+        this.clipro = new ClienteProveedor();
         return "ListadeClientes.xhtml";
     }
     //DELETE    

@@ -8,6 +8,7 @@ entities\PedidoProduccion.class
 entities\PedidoProduccion_.class
 entities\ProductosInventario.class
 services\PedidoProduccionFacade.class
+controllers\ControllerClientes.class
 entities\ClienteProveedor_.class
 controllers\ControllerRegistrarEmpleados.class
 entities\Empleados_.class
