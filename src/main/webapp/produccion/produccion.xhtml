@@ -43,93 +43,101 @@
     </h:head>
     <h:body>
         <header>
-            <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white " >
-                <div class="position-sticky">
-                    <div class="list-group list-group-flush mx-3 mt-2">
-                        <h:link outcome="RegistrarCliente.xhtml" class="list-group-item list-group-item-action py-1 ripple mt-1">
+            <div class='dashboard'>
+                <div class="dashboard-nav">
+                    <header>
+                        <h:link outcome="produccion.xhtml" class="navbar-brand">
+                            <image src="../images/logo.png" height="33" alt="logop" loading="lazy"/>
+                        </h:link>
+                    </header>
+                    <nav class="dashboard-nav-list">
+                        <h:link outcome="RegistrarCliente.xhtml" class="list-group-item list-group-item-action py-2 ripple mt-2">
                             <i class="fa-solid fa-user-plus me-3"></i><span>Registrar Cliente</span>
                         </h:link>
-                        <h:link outcome="ListadeClientes.xhtml"  class="list-group-item list-group-item-action py-1 ripple mt-1">
+                        <h:link outcome="ListadeClientes.xhtml"  class="list-group-item list-group-item-action py-2 ripple mt-2">
                             <i class="fa-solid fa-people-group me-3"></i><span>Lista de Clientes</span>
                         </h:link>
-                        <h:link outcome="RegistrarPedido.xhtml"  class="list-group-item list-group-item-action py-1 ripple mt-1">
+                        <h:link outcome="RegistrarPedido.xhtml"  class="list-group-item list-group-item-action py-2 ripple mt-2">
                             <i class="fa-solid fa-truck me-3"></i><span>Registrar Pedido</span>
                         </h:link>
-                        <h:link outcome="ListadePedidos.xhtml"  class="list-group-item list-group-item-action py-1 ripple mt-1">
+                        <h:link outcome="ListadePedidos.xhtml"  class="list-group-item list-group-item-action py-2 ripple mt-2">
                             <i class="fa-solid fa-folder-open me-3"></i><span>Lista de Pedidos</span>
                         </h:link>
-                        <h:link outcome="RegistrarProductos.xhtml" class="list-group-item list-group-item-action py-1 ripple mt-1">
+                        <h:link outcome="RegistrarProductos.xhtml" class="list-group-item list-group-item-action py-2 ripple mt-2">
                             <i class="fa-solid fa-boxes-stacked me-3"></i><span>Registrar Productos</span>
                         </h:link>
-                        <h:link outcome="RegistrarProduccion.xhtml" class="list-group-item list-group-item-action py-1 ripple mt-1">
+                        <h:link outcome="RegistrarProduccion.xhtml" class="list-group-item list-group-item-action py-2 ripple mt-2">
                             <i class="fa-solid fa-box-open me-3"></i><span>Registrar Produccion</span>
                         </h:link>
-                        <h:link outcome="ListadeProduccion.xhtml" class="list-group-item list-group-item-action py-1 ripple mt-1">
+                        <h:link outcome="ListadeProduccion.xhtml" class="list-group-item list-group-item-action py-2 ripple mt-2">
                             <i class="fa-solid fa-list-check me-3"></i><span>Lista de Produccion</span>
                         </h:link>
-                        <div class="d-grid text-black mt-4" id="b"  >       
-                            <a onclick="confirmarSalida()" class="btn btn-secundary btn-user btn-block">Salir</a>
+                    </nav>
+                </div>
+                <div class='dashboard-app'>
+                    <header class='dashboard-toolbar'><a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a>
+                        <label class="switch align-self-sm-end">
+                            <input type="checkbox" id="dark-mode" onclick="document.documentElement.classList.toggle('dark-mode')"/>
+                            <span class="slider"></span>
+                        </label>
+                    </header>
+                    <br/>
+                    <main class="dashboard-content mt-5">
+                        <div class="container">
+                            <div class="justify-content-center ">
+                                <div class="card">
+                                    <div class='card-header'>
+                                        <h3 class="card-titile ">
+                                            Bienvenido al módulo de administracion
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </main>
+                    <main class="dashboard-content">
+                        <div class="container">
+                            <div class="row justify-content-center ">
+                                <div class="col-12">
+                                    <div class="card card-body">
+                                        <a style="color: #7CC6FE;" href="documentos/Manual_del_Bodeguero.pdf" download="Acme Documentation (ver. 2.0.1).txt">Descargar Manual</a>
+                                        <p class="lead">En este módulo podras ver y llevar a cabo las siguientes funciones:
+                                            Registrar nuevos empleados junto a sus credenciales para el ingreso al sistema, administrar los diferentes roles
+                                            que permitira el acceso restringido dependiendo de los permisos otorgados, asi mismo como la informacion de ex-empleados
+                                            en caso de alguna eventualidad.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
                 </div>
-            </nav>
-            <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
-                <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation" >
-                        <i class="fas fa-bars"></i>
-                    </button>
-                    <h:link outcome="produccion.xhtml" class="navbar-brand">
-                        <image src="../images/logo.png" height="33" alt="logop" loading="lazy"/>
-                    </h:link>
-                    <label class="switch align-self-sm-end">
-                        <input type="checkbox" id="dark-mode" onclick="document.documentElement.classList.toggle('dark-mode')"/>
-                        <span class="slider"></span>
-                    </label>
-                    <form class="d-none d-md-flex input-group w-auto my-auto" style="height: 2rem;"></form>
-
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                        <li>
-                            <a class="dropdown-item" href="#">My profile</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Settings</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Logout</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+            </div>
         </header>
-        <br></br>
-          <main class="mt-5">
-            <div class="container">
-                <div class="row justify-content-center ">
-                    <div class="col-md-12">
-                        <div class="card card-body">
-                            <h3 class="card-titile">
-                                Bienvenido al módulo de administracion
-                            </h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
-        <main class="mt-5 informacion">
-            <div class="container pt-4">
-                <section class=" container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-10">
-                            <a style="color: #7CC6FE;" href="documentos/Manual_del_Bodeguero.pdf" download="Acme Documentation (ver. 2.0.1).txt">Descargar Manual</a>
-                            <p class="lead">En este módulo podras ver y llevar a cabo las siguientes funciones:
-                                Registrar nuevos empleados junto a sus credenciales para el ingreso al sistema, administrar los diferentes roles
-                                que permitira el acceso restringido dependiendo de los permisos otorgados, asi mismo como la informacion de ex-empleados
-                                en caso de alguna eventualidad.
-                            </p>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </main>
+        <script>
+            const mobileScreen = window.matchMedia("(max-width: 990px )");
+            $(document).ready(function () {
+                $(".dashboard-nav-dropdown-toggle").click(function () {
+                    $(this).closest(".dashboard-nav-dropdown")
+                            .toggleClass("show")
+                            .find(".dashboard-nav-dropdown")
+                            .removeClass("show");
+                    $(this).parent()
+                            .siblings()
+                            .removeClass("show");
+                });
+                $(".menu-toggle").click(function () {
+                    if (mobileScreen.matches) {
+                        $(".dashboard-nav").toggleClass("mobile-show");
+                    } else {
+                        $(".dashboard").toggleClass("dashboard-compact");
+                    }
+                });
+            });
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </h:body>
 </html>
