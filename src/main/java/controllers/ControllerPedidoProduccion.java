@@ -35,45 +35,48 @@ public class ControllerPedidoProduccion implements Serializable {
     private ClienteProveedor clipro = new ClienteProveedor();
     @EJB
     private ClienteProveedorFacade cliproFacade;
-    
+
     public ControllerPedidoProduccion() {
     }
-    
+
     //CREATE
-    public void guardarEmpleado(){
-        try{
+    public String guardarEmpleado() {
+        try {
             pedido.setIdEmpleadoPed(empleadoFacade.find(empleado.getIdEmpleados()));
             pedido.setIdClientePed(cliproFacade.find(clipro.getIdClienteProveedor()));
             pedido.setIdConductor(empleadoFacade.find(empleado.getIdEmpleados()));
-            pedidoFacade.create(pedido);
-        }catch (Exception e) {
+            pedidoFacade.create(pedido);        
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+            return "ListadePedidos.xhtml";
     }
 //READ
-    public List<PedidoProduccion> listaPedidos(){
+
+    public List<PedidoProduccion> listaPedidos() {
         return pedidoFacade.findAll();
     }
 //UPDATE
-    public String actualizarPedido(PedidoProduccion e){
+
+    public String actualizarPedido(PedidoProduccion e) {
         this.pedido = e;
         return "ActualizarPedidos.xhtml";
     }
-    
-    public String actualizarPedido(){
+
+    public String actualizarPedido() {
         PedidoProduccion pedAct = this.pedidoFacade.find(this.pedido.getIdPedido());
-        
+
         pedAct.setIdEmpleadoPed(this.pedido.getIdEmpleadoPed());
         pedAct.setIdClientePed(this.pedido.getIdClientePed());
         pedAct.setNumeroFactura(this.pedido.getNumeroFactura());
         pedAct.setValor(this.pedido.getValor());
         pedAct.setIdConductor(this.pedido.getIdConductor());
-        
+
         this.pedidoFacade.edit(pedAct);
-        
+
         return "ListadePedidos.xhtml";
     }
-    
+
     /*public String actualizarPedido() {
     // Obtener el pedido que se va a actualizar
     PedidoProduccion pedidoActualizado = this.pedidoFacade.find(this.pedido.getId());
@@ -93,14 +96,12 @@ public class ControllerPedidoProduccion implements Serializable {
 }
 
     
-    */
-    
+     */
 //DELETE
-    public void eliminarPedido(PedidoProduccion pedido){
-        this.pedidoFacade.remove(pedido);        
+    public String eliminarPedido(PedidoProduccion pedido) {
+        this.pedidoFacade.remove(pedido);
+        return "ListadePedidos.xhtml";
     }
-    
-    
 
     public PedidoProduccion getPedido() {
         return pedido;
@@ -149,6 +150,5 @@ public class ControllerPedidoProduccion implements Serializable {
     public void setCliproFacade(ClienteProveedorFacade cliproFacade) {
         this.cliproFacade = cliproFacade;
     }
-    
-    
+
 }

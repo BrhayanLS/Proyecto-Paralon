@@ -124,6 +124,19 @@ input:checked+.slider:before{
     transform: translateX(26px);
 }
 
+.action{
+    display: inline-block;
+}
+
+.h-action{
+    display: flex;
+}
+
+.i-action{
+    color: #000;
+    justify-content: start;
+}
+
 /*Estilo del boton que esta activo*/
 .list-group-item.active{
     background-color: #314875 !important;

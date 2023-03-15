@@ -46,125 +46,128 @@
     </h:head>
     <h:body>
         <header>
-            <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white " >
-                <div class="position-sticky">
-                    <div class="list-group list-group-flush mx-3 mt-2">
-                        <h:link outcome="RegistrarCliente.xhtml" class="list-group-item list-group-item-action py-1 ripple mt-1">
+            <div class='dashboard'>
+                <div class="dashboard-nav">
+                    <header>
+                        <h:link outcome="produccion.xhtml" class="navbar-brand">
+                            <image src="../images/logo.png" height="33" alt="logop" loading="lazy"/>
+                        </h:link>
+                    </header>
+                    <nav class="dashboard-nav-list">
+                        <h:link outcome="RegistrarCliente.xhtml" class="list-group-item list-group-item-action py-2 ripple mt-2">
                             <i class="fa-solid fa-user-plus me-3"></i><span>Registrar Cliente</span>
                         </h:link>
-                        <h:link outcome="ListadeClientes.xhtml"  class="list-group-item list-group-item-action py-1 ripple mt-1">
+                        <h:link outcome="ListadeClientes.xhtml"  class="list-group-item list-group-item-action py-2 ripple mt-2">
                             <i class="fa-solid fa-people-group me-3"></i><span>Lista de Clientes</span>
                         </h:link>
-                        <h:link outcome="RegistrarPedido.xhtml"  class="list-group-item list-group-item-action py-1 ripple mt-1">
+                        <h:link outcome="RegistrarPedido.xhtml"  class="list-group-item list-group-item-action py-2 ripple mt-2">
                             <i class="fa-solid fa-truck me-3"></i><span>Registrar Pedido</span>
                         </h:link>
-                        <h:link outcome="ListadePedidos.xhtml"  class="list-group-item list-group-item-action py-1 ripple mt-1">
+                        <h:link outcome="ListadePedidos.xhtml"  class="list-group-item list-group-item-action py-2 ripple mt-2">
                             <i class="fa-solid fa-folder-open me-3"></i><span>Lista de Pedidos</span>
                         </h:link>
-                        <h:link outcome="RegistrarProductos.xhtml" class="list-group-item list-group-item-action py-1 ripple mt-1">
+                        <h:link outcome="RegistrarProductos.xhtml" class="list-group-item list-group-item-action py-2 ripple mt-2">
                             <i class="fa-solid fa-boxes-stacked me-3"></i><span>Registrar Productos</span>
                         </h:link>
-                        <h:link outcome="RegistrarProduccion.xhtml" class="list-group-item list-group-item-action py-1 ripple mt-1">
+                        <h:link outcome="RegistrarProduccion.xhtml" class="list-group-item list-group-item-action py-2 ripple mt-2">
                             <i class="fa-solid fa-box-open me-3"></i><span>Registrar Produccion</span>
                         </h:link>
-                        <h:link outcome="ListadeProduccion.xhtml" class="list-group-item list-group-item-action py-1 ripple mt-1 active">
+                        <h:link outcome="ListadeProduccion.xhtml" class="list-group-item list-group-item-action py-2 ripple mt-2 active">
                             <i class="fa-solid fa-list-check me-3"></i><span>Lista de Produccion</span>
                         </h:link>
-                        <div class="d-grid text-black mt-4" id="b"  >       
-                            <a onclick="confirmarSalida()" class="btn btn-secundary btn-user btn-block">Salir</a>
-                        </div>
-                    </div>
+                    </nav>
                 </div>
-            </nav>
-            <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
-                <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation" >
-                        <i class="fas fa-bars"></i>
-                    </button>
-                    <h:link outcome="produccion.xhtml" class="navbar-brand">
-                        <image src="../images/logo.png" height="33" alt="logop" loading="lazy"/>
-                    </h:link>
-                    <label class="switch align-self-sm-end">
-                        <input type="checkbox" id="dark-mode" onclick="document.documentElement.classList.toggle('dark-mode')"/>
-                        <span class="slider"></span>
-                    </label>
-                    <form class="d-none d-md-flex input-group w-auto my-auto" style="height: 2rem;"></form>
-
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                        <li>
-                            <a class="dropdown-item" href="#">My profile</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Settings</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Logout</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
-        <br></br>
-            <main class="mt-5">
-            <div class="container">
-                <div class="row justify-content-center ">
-                    <div class="col-md-12">
-                        <div class="card card-body">
-                            <h3 class="card-titile">
-                               LISTA DE PRODUCCION
-                            </h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
-
-        <main class="mt-4">
-            <div class="container">
-                <div class="row justify-content-center ">
-                    <div class="col-12">
-                        <div class="card card-body">
-                            <div class="table-responsive">
-                            <h:dataTable class="table table-hover table-bordered  text-center" id="botones" value="#{controllerRegistroCliente.listarProv()}" var="t">
-                                    <h:column>
-                                        <f:facet name="header">Id Produccion</f:facet>
-                                        <h:outputText/>
-                                    </h:column>
-                                    <h:column>
-                                        <f:facet name="header">Producto</f:facet>
-                                        <h:outputText/>
-                                    </h:column>
-                                    <h:column>
-                                        <f:facet name="header">Empleado</f:facet>
-                                        <h:outputText/>
-                                    </h:column>
-                                    <h:column>
-                                        <f:facet name="header">Fecha</f:facet>
-                                        <h:outputText/>
-                                    </h:column>
-                                    <h:column>
-                                        <f:facet name="header">Acciones</f:facet>
-                                        <h:form>
-                                            <h:commandButton class="btn btn-outline-primary mr-1" value="Actualizar"></h:commandButton>
-                                        </h:form>
-                                        <h:form>
-                                            <h:commandButton class="btn btn-outline-primary ml-1" value="Eliminar"></h:commandButton>
-                                        </h:form>
-                                    </h:column>
-                                </h:dataTable>
+                <div class='dashboard-app'>
+                    <header class='dashboard-toolbar'><a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a>
+                        <label class="switch align-self-sm-end">
+                            <input type="checkbox" id="dark-mode" onclick="document.documentElement.classList.toggle('dark-mode')"/>
+                            <span class="slider"></span>
+                        </label>
+                    </header>
+                    <br/>
+                    <main class="dashboard-content mt-5">
+                        <div class="container">
+                            <div class="justify-content-center ">
+                                <div class="card">
+                                    <div class='card-header'>
+                                        <h3 class="card-titile">
+                                            LISTA DE PRODUCCION
+                                        </h3>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </main>
+                    <main class="dashboard-content">
+                        <div class="container">
+                            <div class="row justify-content-center ">
+                                <div class="col-12">
+                                    <div class="card card-body">
+                                        <div class="table-responsive">
+                                            <h:dataTable class="table table-hover table-bordered  text-center" id="botones" value="#{controllerRegistroCliente.listarProv()}" var="t">
+                                                <h:column>
+                                                    <f:facet name="header">Id Produccion</f:facet>
+                                                    <h:outputText/>
+                                                </h:column>
+                                                <h:column>
+                                                    <f:facet name="header">Producto</f:facet>
+                                                    <h:outputText/>
+                                                </h:column>
+                                                <h:column>
+                                                    <f:facet name="header">Empleado</f:facet>
+                                                    <h:outputText/>
+                                                </h:column>
+                                                <h:column>
+                                                    <f:facet name="header">Fecha</f:facet>
+                                                    <h:outputText/>
+                                                </h:column>
+                                                <h:column>
+                                                    <f:facet name="header">Acciones</f:facet>
+                                                    <h:form>
+                                                        <h:commandButton class="btn btn-outline-primary mr-1" value="Actualizar"></h:commandButton>
+                                                    </h:form>
+                                                    <h:form>
+                                                        <h:commandButton class="btn btn-outline-primary ml-1" value="Eliminar"></h:commandButton>
+                                                    </h:form>
+                                                </h:column>
+                                            </h:dataTable>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
             </div>
-        </main>
+            </div>
+        </header>
         <script>
+                                $(document).ready(function () {
+                                    $('#botones').DataTable({
+                                        dom: 'Bfrtip',
+                                        buttons: [
+                                            'copy', 'csv', 'excel', 'pdf', 'print'
+                                        ]
+                                    });
+                                });
+        </script>
+        <script>
+            const mobileScreen = window.matchMedia("(max-width: 990px )");
             $(document).ready(function () {
-                $('#botones').DataTable({
-                    dom: 'Bfrtip',
-                    buttons: [
-                        'copy', 'csv', 'excel', 'pdf', 'print'
-                    ]
+                $(".dashboard-nav-dropdown-toggle").click(function () {
+                    $(this).closest(".dashboard-nav-dropdown")
+                            .toggleClass("show")
+                            .find(".dashboard-nav-dropdown")
+                            .removeClass("show");
+                    $(this).parent()
+                            .siblings()
+                            .removeClass("show");
+                });
+                $(".menu-toggle").click(function () {
+                    if (mobileScreen.matches) {
+                        $(".dashboard-nav").toggleClass("mobile-show");
+                    } else {
+                        $(".dashboard").toggleClass("dashboard-compact");
+                    }
                 });
             });
         </script>
