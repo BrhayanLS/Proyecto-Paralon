@@ -87,7 +87,7 @@ public class ContollerLogin implements Serializable {
             case "Jefe Produccion":
                 return "produccion/produccion.xhtml";
             case "Jefe Inventario":
-                return "inventario/InicioInventario.xhtml";
+                return "INVENTARIO1/inicioInventario.xhtml";
             default:
                 return "index.xhtml";
 

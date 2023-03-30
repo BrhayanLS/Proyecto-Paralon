@@ -24,7 +24,7 @@ public class ControllerProductos implements Serializable {
     }
     
     //CREATE
-    public void guardarCliente(){
+    public void guardarProducto(){
         productosFacade.create(productos);
     }
     //READ

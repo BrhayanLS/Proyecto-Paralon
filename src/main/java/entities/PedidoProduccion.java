@@ -171,5 +171,4 @@ public class PedidoProduccion implements Serializable {
     public String toString() {
         return "entities.PedidoProduccion[ idPedido=" + idPedido + " ]";
     }
-    
 }
