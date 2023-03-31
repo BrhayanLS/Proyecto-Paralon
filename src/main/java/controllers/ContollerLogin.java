@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSF/JSFManagedBean.java to edit this template
- */
 package controllers;
 
 import entities.Empleados;
@@ -13,10 +9,6 @@ import javax.ejb.EJB;
 import javax.faces.context.FacesContext;
 import services.EmpleadosFacade;
 
-/**
- *
- * @author brhay
- */
 @Named(value = "contollerLogin")
 @SessionScoped
 public class ContollerLogin implements Serializable {
@@ -87,7 +79,7 @@ public class ContollerLogin implements Serializable {
             case "Jefe Produccion":
                 return "produccion/produccion.xhtml";
             case "Jefe Inventario":
-                return "inventario/InicioInventario.xhtml";
+                return "INVENTARIO1/inicioInventario.xhtml";
             default:
                 return "index.xhtml";
 

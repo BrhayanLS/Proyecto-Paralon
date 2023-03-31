@@ -1,4 +1,5 @@
 C:\Users\brhay\Documents\NetBeansProjects\Proyecto\src\main\java\entities\Rol.java
+C:\Users\brhay\Documents\NetBeansProjects\Proyecto\src\main\java\controllers\ControllerProductos.java
 C:\Users\brhay\Documents\NetBeansProjects\Proyecto\src\main\java\entities\ExEmpleados.java
 C:\Users\brhay\Documents\NetBeansProjects\Proyecto\src\main\java\services\ProduccionFacade.java
 C:\Users\brhay\Documents\NetBeansProjects\Proyecto\src\main\java\services\RolFacade.java
@@ -7,6 +8,7 @@ C:\Users\brhay\Documents\NetBeansProjects\Proyecto\src\main\java\entities\Detall
 C:\Users\brhay\Documents\NetBeansProjects\Proyecto\src\main\java\services\ActualizacionPedidoFacade.java
 C:\Users\brhay\Documents\NetBeansProjects\Proyecto\src\main\java\entities\ProductosProduccion.java
 C:\Users\brhay\Documents\NetBeansProjects\Proyecto\src\main\java\entities\ProductosInventario.java
+C:\Users\brhay\Documents\NetBeansProjects\Proyecto\src\main\java\controllers\numericValidator.java
 C:\Users\brhay\Documents\NetBeansProjects\Proyecto\src\main\java\services\ProductosInventarioFacade.java
 C:\Users\brhay\Documents\NetBeansProjects\Proyecto\src\main\java\services\ClienteProveedorFacade.java
 C:\Users\brhay\Documents\NetBeansProjects\Proyecto\src\main\java\entities\PedidoProduccion.java
@@ -19,13 +21,19 @@ C:\Users\brhay\Documents\NetBeansProjects\Proyecto\src\main\java\controllers\Con
 C:\Users\brhay\Documents\NetBeansProjects\Proyecto\src\main\java\services\AbstractFacade.java
 C:\Users\brhay\Documents\NetBeansProjects\Proyecto\src\main\java\services\EmpleadosFacade.java
 C:\Users\brhay\Documents\NetBeansProjects\Proyecto\src\main\java\services\SalidaInventarioFacade.java
+C:\Users\brhay\Documents\NetBeansProjects\Proyecto\src\main\java\controllers\ControllerProduccion.java
+C:\Users\brhay\Documents\NetBeansProjects\Proyecto\src\main\java\controllers\controllerEntrada.java
 C:\Users\brhay\Documents\NetBeansProjects\Proyecto\src\main\java\entities\SalidaInventario.java
 C:\Users\brhay\Documents\NetBeansProjects\Proyecto\src\main\java\controllers\ControllerRegistrarRol.java
 C:\Users\brhay\Documents\NetBeansProjects\Proyecto\src\main\java\services\DetalleSalidaFacade.java
+C:\Users\brhay\Documents\NetBeansProjects\Proyecto\src\main\java\controllers\controllerProveedor.java
 C:\Users\brhay\Documents\NetBeansProjects\Proyecto\src\main\java\controllers\ControllerPedidoProduccion.java
 C:\Users\brhay\Documents\NetBeansProjects\Proyecto\src\main\java\entities\Produccion.java
+C:\Users\brhay\Documents\NetBeansProjects\Proyecto\src\main\java\controllers\controllerInventario.java
+C:\Users\brhay\Documents\NetBeansProjects\Proyecto\src\main\java\controllers\controllerSalida.java
 C:\Users\brhay\Documents\NetBeansProjects\Proyecto\src\main\java\entities\EntradaInventario.java
 C:\Users\brhay\Documents\NetBeansProjects\Proyecto\src\main\java\services\ProductosProduccionFacade.java
 C:\Users\brhay\Documents\NetBeansProjects\Proyecto\src\main\java\controllers\ControllerClientes.java
 C:\Users\brhay\Documents\NetBeansProjects\Proyecto\src\main\java\services\ExEmpleadosFacade.java
+C:\Users\brhay\Documents\NetBeansProjects\Proyecto\src\main\java\controllers\Validation.java
 C:\Users\brhay\Documents\NetBeansProjects\Proyecto\src\main\java\controllers\ControllerRegistrarEmpleados.java

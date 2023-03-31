@@ -5,9 +5,17 @@
 package services;
 
 import entities.PedidoProduccion;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -27,5 +35,5 @@ public class PedidoProduccionFacade extends AbstractFacade<PedidoProduccion> {
     public PedidoProduccionFacade() {
         super(PedidoProduccion.class);
     }
-    
+
 }

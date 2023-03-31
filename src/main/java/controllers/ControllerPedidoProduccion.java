@@ -5,9 +5,7 @@
 package controllers;
 
 import entities.ClienteProveedor;
-import entities.ClienteProveedor_;
 import entities.Empleados;
-import entities.Empleados_;
 import entities.PedidoProduccion;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
@@ -45,14 +43,13 @@ public class ControllerPedidoProduccion implements Serializable {
             pedido.setIdEmpleadoPed(empleadoFacade.find(empleado.getIdEmpleados()));
             pedido.setIdClientePed(cliproFacade.find(clipro.getIdClienteProveedor()));
             pedido.setIdConductor(empleadoFacade.find(empleado.getIdEmpleados()));
-            pedidoFacade.create(pedido);        
+            pedidoFacade.create(pedido);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-            return "ListadePedidos.xhtml";
+        return "RegistrarPedido.xhtml";
     }
 //READ
-
     public List<PedidoProduccion> listaPedidos() {
         return pedidoFacade.findAll();
     }
@@ -65,11 +62,15 @@ public class ControllerPedidoProduccion implements Serializable {
 
     public String actualizarPedido() {
         PedidoProduccion pedAct = this.pedidoFacade.find(this.pedido.getIdPedido());
-
-        pedAct.setIdEmpleadoPed(this.pedido.getIdEmpleadoPed());
-        pedAct.setIdClientePed(this.pedido.getIdClientePed());
+        empleado.setIdEmpleados(1);
+        pedAct.setIdEmpleadoPed(empleado);
+        clipro.setIdClienteProveedor(1);
+        pedAct.setIdClientePed(clipro);
         pedAct.setNumeroFactura(this.pedido.getNumeroFactura());
         pedAct.setValor(this.pedido.getValor());
+        empleado.setIdEmpleados(1);
+        pedAct.setIdConductor(empleado);
+        
         pedAct.setIdConductor(this.pedido.getIdConductor());
 
         this.pedidoFacade.edit(pedAct);
@@ -77,7 +78,11 @@ public class ControllerPedidoProduccion implements Serializable {
         return "ListadePedidos.xhtml";
     }
 
-    /*public String actualizarPedido() {
+
+    /*
+    
+    
+    public String actualizarPedido() {
     // Obtener el pedido que se va a actualizar
     PedidoProduccion pedidoActualizado = this.pedidoFacade.find(this.pedido.getId());
 
@@ -90,9 +95,6 @@ public class ControllerPedidoProduccion implements Serializable {
 
     // Actualizar el pedido en la base de datos
     this.pedidoFacade.edit(pedidoActualizado);
-
-    // Redireccionar a la lista de pedidos actualizada
-    return "ListadePedidos.xhtml";
 }
 
     

@@ -1,0 +1,213 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//ES" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Registrar Salida</title>
+        <link rel="shortcut icon" href="../images/diamante.png"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css"/>
+        <link rel="stylesheet" href="../css/style.css"/>
+        <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="https://cdn.datatables.net/v/bs4-4.1.1/dt-1.10.18/datatables.min.css"/>
+        <script src="https://cdn.datatables.net/v/bs4-4.1.1/dt-1.10.18/datatables.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" integrity="sha512-rqQltXRuHxtPWhktpAZxLHUVJ3Eombn3hvk9PHjV/N5DMUYnzKPC1i3ub0mEXgFzsaZNeJcoE0YHq0j/GFsdGg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+        <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.2/css/buttons.dataTables.min.css"/>
+        <script src="https://cdn.datatables.net/buttons/1.6.2/js/dataTables.buttons.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.html5.min.js"></script>
+        <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.53/build/pdfmake.min.js"></script>
+        <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.53/build/vfs_fonts.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.flash.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.print.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    </h:head>
+    <h:body>
+        <header>
+            <div class='dashboard'>
+                <div class="dashboard-nav">
+                    <header>
+                        <h:link  class="navbar-brand">
+                            <image src="../images/logo.png" height="33" alt="logop" loading="lazy"/>
+                        </h:link>
+                    </header>
+                    <nav class="dashboard-nav-list">
+                        <h:link outcome="registrarProveedor.xhtml" class="list-group-item list-group-item-action  py-2 ripple mt-2">
+                            <i class="fa-solid fa-user-plus me-3"></i><span>Registrar Proveedor</span>
+                        </h:link>
+                        <h:link outcome="Entrada.xhtml" class="list-group-item list-group-item-action py-2 ripple mt-2">
+                            <i class="fa-solid fa-address-card me-3"></i><span>Entrada Inventario</span>
+                        </h:link>
+                        <h:link outcome="Salida.xhtml" class="list-group-item active list-group-item-action py-2 ripple mt-2">
+                            <i class="fa-solid fa-address-card me-3"></i><span>Salida Inventario</span>
+                        </h:link>
+                        <h:link outcome="listaProveedor.xhtml" class="list-group-item list-group-item-action py-2 ripple mt-2 ">
+                            <i class="fa-solid fa-people-group me-3"></i><span>Consultar Proveedor</span>
+                        </h:link>
+                        <h:link outcome="registrarInventario.xhtml" class="list-group-item list-group-item-action  py-2 ripple mt-2">
+                            <i class="fa-solid fa-users-slash me-3"></i><span>Registrar Inventario</span>
+                        </h:link>
+                    </nav>
+                </div>
+                <div class='dashboard-app'>
+                    <header class='dashboard-toolbar'><a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a>
+                        <label class="switch align-self-sm-end">
+                            <input type="checkbox" id="dark-mode" onclick="document.documentElement.classList.toggle('dark-mode')"/>
+                            <span class="slider"></span>
+                        </label>
+                    </header>
+                    <br/>
+                    <main class="dashboard-content mt-5">
+                        <div class="container">
+                            <div class="justify-content-center ">
+                                <div class="card">
+                                    <div class='card-header'>
+                                        <h3 class="card-titile" style="color: #1D70A2; text-align:center"> SALIDA INVENTARIO </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                    <main class="dashboard-content">
+                        <div class="container">
+                            <div class="row justify-content-center ">
+                                <div class="col-12">
+                                    <div class="d-flex">
+                                        <Button type="button" value="#{controllerRegistrarProveedor.cargarID(t)}" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Registrar Salida</Button>
+                                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title fs-5" id="exampleModalLabel" >REGISTRAR DATOS DE SALIDA</h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div id="msj" class="modal-body">
+
+                                                        <h:form class="row g-4 ">
+                                                            <div class="col-md-4">
+                                                                <div class="form-label">
+                                                                    <label>Id Empleado</label>
+                                                                    <h:inputText value="#{controllerSalida.salida.idEmpleadoSal}" 
+                                                                                 class="form-control"
+                                                                                 id="fecha"
+                                                                                 a:placeholder="fecha">
+                                                                    </h:inputText>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div class="form-label">
+                                                                    <label>Fecha Salida</label>
+                                                                    <h:inputText value="#{controllerSalida.salida.fecha}"
+                                                                                 class="form-control" 
+                                                                                 a:placeholder="id producto">
+                                                                    </h:inputText>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12 mt-3 d-flex justify-content-center">
+                                                                <h:commandButton  action="#{controllerSalida.guardar()}" class="btn btn-outline-primary" value="REGISTRAR"></h:commandButton>
+                                                            </div>
+                                                        </h:form> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </main>
+                    <main class=" dashboard-content">
+                        <div class='container'>
+                            <div class='card card-body '>
+                                <div class="table-responsive" widgetVar="valor">
+                                    <h:dataTable value="#{controllerSalida.getAllSalidaInventario()}" style="border-color: #7CC6FE;" class="table table-hover table-bordered  text-center" id="botones"  var="t">
+                                        <h:column>
+                                            <f:facet name="header">Id salida</f:facet>
+                                            <h:outputText value="#{t.idSalida}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">id empleado</f:facet>
+                                            <h:outputText value="#{t.idEmpleadoSal.idEmpleados}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">Fecha salida</f:facet>
+                                            <h:outputText value="#{t.fecha}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">Eliminar</f:facet>
+                                            <h:form>
+                                                <h:commandLink action="#{controllerSalida.eliminar(t)}" >
+                                                    <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+                                                    <lord-icon
+                                                        src="https://cdn.lordicon.com/jmkrnisz.json"
+                                                        trigger="hover"
+                                                        style="width:2rem;height:2rem">
+                                                    </lord-icon>
+                                                </h:commandLink>
+                                            </h:form>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">Actualizar</f:facet>
+                                            <h:form>
+                                                <h:commandLink>
+                                                    <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+                                                    <lord-icon
+                                                        src="https://cdn.lordicon.com/nxooksci.json"
+                                                        trigger="hover"
+                                                        style="width:40px;height:40px">
+                                                    </lord-icon>
+                                                </h:commandLink>
+                                            </h:form>
+                                        </h:column>
+                                    </h:dataTable>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </header>
+        <script>
+                                $(document).ready(function () {
+                                    $('#botones').DataTable({
+                                        dom: 'Bfrtip',
+                                        buttons: [
+                                            'copy', 'csv', 'excel', 'pdf', 'print'
+                                        ]
+                                    });
+                                });
+        </script>
+        <script>
+            const mobileScreen = window.matchMedia("(max-width: 990px )");
+            $(document).ready(function () {
+                $(".dashboard-nav-dropdown-toggle").click(function () {
+                    $(this).closest(".dashboard-nav-dropdown")
+                            .toggleClass("show")
+                            .find(".dashboard-nav-dropdown")
+                            .removeClass("show");
+                    $(this).parent()
+                            .siblings()
+                            .removeClass("show");
+                });
+                $(".menu-toggle").click(function () {
+                    if (mobileScreen.matches) {
+                        $(".dashboard-nav").toggleClass("mobile-show");
+                    } else {
+                        $(".dashboard").toggleClass("dashboard-compact");
+                    }
+                });
+            });
+        </script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </h:body>
+</html>
