@@ -91,7 +91,7 @@
                                             <div class="col-md-7">
                                                 <div class="form-label">
                                                     <label for="nombreproduc">Nombre Del Producto</label>
-                                                    <h:inputText class="form-control" 
+                                                    <h:inputText class="form-control" value="#{controllerProductos.productos.nombre}"
                                                                  id="nombreproduc"
                                                                  a:placeholder="Nombre Del Producto"
                                                                  requiredMessage="campo obligatorio"
@@ -112,7 +112,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-12 mt-3 d-flex justify-content-center">
-                                                <h:commandButton actionListener="#{controllerRegistroEmpleado.saveEmpleado()}" class="btn btn-outline-primary" value="REGISTRAR"></h:commandButton>
+                                                <h:commandButton actionListener="#{controllerProductos.guardarProducto()}" class="btn btn-outline-primary" value="REGISTRAR"></h:commandButton>
                                             </div>
                                         </h:form> 
                                     </div>

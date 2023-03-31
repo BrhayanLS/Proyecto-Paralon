@@ -2,8 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
     <h:head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -90,29 +89,29 @@
                                         <h:form class="row g-4 justify-content-center">
                                             <div class="col-md-6">
                                                 <div class="form-label">
-                                                    <label for="idproducto">Id Producto</label>
-                                                    <h:inputText class="form-control"
-                                                                 id="idproducto" 
-                                                                 a:placeholder="Id Producto"
-                                                                 requiredMessage="campo obligatorio"
+                                                    <label>Id Producto</label>
+                                                    <h:inputText validator="#{validation.validar}"
+                                                                 class="form-control" a:placeholder="Id Producto"
+                                                                 id="dni" requiredMessage="Campo Obligatorio"
                                                                  required="true">
                                                     </h:inputText>
-                                                    <h:message for="idproducto" style="color:red" />
+                                                    <h:message for="dni" style="color:red" />
+
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-label">
-                                                    <label for="idempleado">Id Empleado</label>
-                                                    <h:inputText class="form-control"
-                                                                 id="idempleado" a:placeholder="Id Empleado"
-                                                                 requiredMessage="campo obligatorio"
+                                                    <label>Id Empleado</label>
+                                                    <h:inputText value="#{controllerProduccion.produc.idEmpleadoPro}"
+                                                                 class="form-control" a:placeholder="Id Empleado"
+                                                                 id="dni1" requiredMessage="Campo Obligatorio"
                                                                  required="true">
                                                     </h:inputText>
-                                                    <h:message for="idempleado" style="color:red" />
+                                                    <h:message for="dni1" style="color:red" />
                                                 </div>
                                             </div>
                                             <div class="col-12 mt-3 d-flex justify-content-center">
-                                                <h:commandButton actionListener="#{controllerRegistroEmpleado.saveEmpleado()}" class="btn btn-outline-primary" value="REGISTRAR"></h:commandButton>
+                                                <h:commandButton actionListener="#{controllerProduccion.guardarProduccion()}" class="btn btn-outline-primary" value="REGISTRAR"></h:commandButton>
                                             </div>
                                         </h:form> 
                                     </div>

@@ -11,6 +11,10 @@ import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
 import javax.ejb.EJB;
+import javax.faces.application.FacesMessage;
+import javax.faces.component.UIComponent;
+import javax.faces.component.UIInput;
+import javax.faces.context.FacesContext;
 import services.ClienteProveedorFacade;
 
 /**

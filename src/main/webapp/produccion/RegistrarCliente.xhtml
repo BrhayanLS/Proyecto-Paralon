@@ -34,8 +34,8 @@
                 <div class="dashboard-nav">
                     <header>
                         <h:link outcome="produccion.xhtml" class="navbar-brand">
-                        <image src="../images/logo.png" height="33" alt="logop" loading="lazy"/>
-                    </h:link>
+                            <image src="../images/logo.png" height="33" alt="logop" loading="lazy"/>
+                        </h:link>
                     </header>
                     <nav class="dashboard-nav-list">
                         <h:link outcome="RegistrarCliente.xhtml" class="list-group-item list-group-item-action py-2 ripple mt-2 active">
@@ -91,11 +91,9 @@
                                             <div class="col-md-4">
                                                 <div class="form-label">
                                                     <label>DNI / NIT</label>
-                                                    <h:inputText value="#{controllerClientes.clipro.dniNit}" 
-                                                                 class="form-control" 
-                                                                 a:placeholder="DNI / NIT"
-                                                                 id="dni"
-                                                                 requiredMessage="campo obligatorio"
+                                                    <h:inputText value="#{controllerClientes.clipro.dniNit}" validator="#{validation.validar}"
+                                                                 class="form-control" a:placeholder="DNI / NIT"
+                                                                 id="dni" requiredMessage="Campo Obligatorio"
                                                                  required="true">
                                                     </h:inputText>
                                                     <h:message for="dni" style="color:red" />
@@ -114,8 +112,7 @@
                                                     <label>Razón Social</label>
                                                     <h:inputText value="#{controllerClientes.clipro.razonSocial}"
                                                                  class="form-control" a:placeholder="Razón Social"
-                                                                 id="razons"
-                                                                 requiredMessage="campo obligatorio"
+                                                                 id="razons" requiredMessage="Campo Obligatorio"
                                                                  required="true">
                                                     </h:inputText>
                                                     <h:message for="razons" style="color:red" />
@@ -132,10 +129,9 @@
                                             <div class="col-md-4">
                                                 <div class="form-label">
                                                     <label>Contacto 1</label>
-                                                    <h:inputText value="#{controllerClientes.clipro.contacto1}" 
+                                                    <h:inputText value="#{controllerClientes.clipro.contacto1}" validator="#{validation.validar}"
                                                                  class="form-control" a:placeholder="Contacto 1"
-                                                                 id="contacto1"
-                                                                 requiredMessage="campo obligatorio"
+                                                                 id="contacto1" requiredMessage="Campo Obligatorio"
                                                                  required="true">
                                                     </h:inputText>
                                                     <h:message for="contacto1" style="color:red" />
@@ -144,7 +140,11 @@
                                             <div class="col-md-4">
                                                 <div class="form-label">
                                                     <label>Contacto 2</label>
-                                                    <h:inputText value="#{controllerClientes.clipro.contacto2}" class="form-control" a:placeholder="Contacto 2"></h:inputText>
+                                                    <h:inputText value="#{controllerClientes.clipro.contacto2}" validator="#{validation.validar}"
+                                                                 class="form-control" a:placeholder="Contacto 2"
+                                                                 id="contacto2">
+                                                    </h:inputText>
+                                                    <h:message for="contacto2" style="color:red" />
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
@@ -152,8 +152,7 @@
                                                     <label>Correo</label>
                                                     <h:inputText value="#{controllerClientes.clipro.correo}"
                                                                  class="form-control" a:placeholder="Correo"
-                                                                 id="correo"
-                                                                 requiredMessage="campo obligatorio"
+                                                                 id="correo" requiredMessage="Campo Obligatorio"
                                                                  required="true">
                                                     </h:inputText>
                                                     <h:message for="correo" style="color:red" />
@@ -164,8 +163,7 @@
                                                     <label>Dirección</label>
                                                     <h:inputText value="#{controllerClientes.clipro.direccion}" 
                                                                  class="form-control" a:placeholder="Dirección"
-                                                                 requiredMessage="campo obligatorio"
-                                                                 id="direccion"
+                                                                 id="direccion" requiredMessage="Campo Obligatorio"
                                                                  required="true">
                                                     </h:inputText>
                                                     <h:message for="direccion" style="color:red" />

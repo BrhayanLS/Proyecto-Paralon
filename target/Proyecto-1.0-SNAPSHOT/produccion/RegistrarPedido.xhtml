@@ -2,8 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
     <h:head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -90,11 +89,10 @@
                                         <h:form class="row g-4 ">
                                             <div class="col-md-4">
                                                 <div class="form-label">
-                                                    <label for="idempleado">Id Empleado</label>
-                                                    <h:inputText value="#{controllerPedidoProduccion.pedido.idEmpleadoPed}" 
-                                                                 class="form-control" id="idempleado" 
-                                                                 a:placeholder="Id Empleado"
-                                                                 requiredMessage="campo obligatorio"
+                                                    <label>Id Empleado</label>
+                                                    <h:inputText value="#{controllerPedidoProduccion.pedido.idEmpleadoPed}"
+                                                                 class="form-control" a:placeholder="Id Empleado"
+                                                                 id="idempleado" requiredMessage="Campo Obligatorio"
                                                                  required="true">
                                                     </h:inputText>
                                                     <h:message for="idempleado" style="color:red" />
@@ -102,11 +100,10 @@
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-label">
-                                                    <label for="idcliente">Id Cliente</label>
-                                                    <h:inputText value="#{controllerPedidoProduccion.pedido.idClientePed}" 
-                                                                 class="form-control" id="idcliente"
-                                                                 a:placeholder="Id Cliente"
-                                                                 requiredMessage="campo obligatorio"
+                                                    <label>Id Cliente</label>
+                                                    <h:inputText value="#{controllerPedidoProduccion.pedido.idClientePed}"
+                                                                 class="form-control" a:placeholder="Id Cliente"
+                                                                 id="idcliente" requiredMessage="Campo Obligatorio"
                                                                  required="true">
                                                     </h:inputText>
                                                     <h:message for="idcliente" style="color:red" />
@@ -114,11 +111,11 @@
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-label">
-                                                    <label for="numfactura">Numero De Factura</label>
+                                                    <label>Numero De Factura</label>
                                                     <h:inputText value="#{controllerPedidoProduccion.pedido.numeroFactura}"
                                                                  class="form-control" id="numfactura" 
                                                                  a:placeholder="Numero De Factura"
-                                                                 requiredMessage="campo obligatorio"
+                                                                  requiredMessage="Campo Obligatorio"
                                                                  required="true">
                                                     </h:inputText>
                                                     <h:message for="numfactura" style="color:red" />
@@ -127,10 +124,9 @@
                                             <div class="col-md-4">
                                                 <div class="form-label">
                                                     <label for="valor">Valor</label>
-                                                    <h:inputText value="#{controllerPedidoProduccion.pedido.valor}" 
-                                                                 class="form-control" id="valor"
-                                                                 a:placeholder="Valor"
-                                                                 requiredMessage="campo obligatorio"
+                                                    <h:inputText value="#{controllerPedidoProduccion.pedido.valor}"
+                                                                 class="form-control" a:placeholder="Valor"
+                                                                 id="valor" requiredMessage="Campo Obligatorio"
                                                                  required="true">
                                                     </h:inputText>
                                                     <h:message for="valor" style="color:red" />
@@ -138,11 +134,10 @@
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-label">
-                                                    <label for="idconductor">Id Conductor</label>
+                                                    <label>Id Conductor</label>
                                                     <h:inputText value="#{controllerPedidoProduccion.pedido.idConductor}"
-                                                                 class="form-control" id="idconductor" 
-                                                                 a:placeholder="Id Conductor"
-                                                                 requiredMessage="campo obligatorio"
+                                                                 class="form-control" a:placeholder="Id Conductor"
+                                                                 id="idconductor" requiredMessage="Campo Obligatorio"
                                                                  required="true">
                                                     </h:inputText>
                                                     <h:message for="idconductor" style="color:red" />
