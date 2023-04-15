@@ -10,6 +10,9 @@ body {
     text-align: left;
     background-color: #fbfbfb;
   }
+  .accion{
+      display: inline-block;
+  }
   @media (min-width: 991.98px) {
     main {
       padding-left: 240px;

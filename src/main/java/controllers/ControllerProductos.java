@@ -39,7 +39,6 @@ public class ControllerProductos implements Serializable {
     
     public String actualizarProducto(){
         this.productosFacade.edit(productos);
-        this.productos = productos;
         return "RegistrarProductos.xhtml";
     }
     //DELETE

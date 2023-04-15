@@ -58,6 +58,9 @@
                         <h:link outcome="ListadeProduccion.xhtml" class="list-group-item list-group-item-action py-2 ripple mt-2 active">
                             <i class="fa-solid fa-list-check me-3"></i><span>Lista de Produccion</span>
                         </h:link>
+                        <h:link outcome="ListaActualizacionPed.xhtml" class="list-group-item list-group-item-action py-2 ripple mt-2">
+                            <i class="fa-solid fa-list-check me-3"></i><span>Pedidos Actualizados</span>
+                        </h:link>
                     </nav>
                 </div>
                 <div class='dashboard-app'>
@@ -87,42 +90,46 @@
                                 <div class="col-12">
                                     <div class="card card-body">
                                         <div class="table-responsive">
-                                            <h:dataTable class="table table-hover table-bordered  text-center" id="botones" value="#{controllerPedidoProduccion.listaPedidos()}" var="t">
+                                            <h:dataTable class="table table-hover table-bordered  text-center" id="botones" value="#{controllerProduccion.listaProduccion()}" var="t">
                                                 <h:column>
-                                                    <f:facet name="header">Id Pedido</f:facet>
-                                                    <h:outputText value="#{t.idPedido}"/>
+                                                    <f:facet name="header">Id Produccion</f:facet>
+                                                    <h:outputText value="#{t.idProduccion}"/>
                                                 </h:column>
                                                 <h:column>
                                                     <f:facet name="header">Fecha</f:facet>
                                                     <h:outputText value="#{t.fecha}"/>
                                                 </h:column>
                                                 <h:column>
+                                                    <f:facet name="header">Producto</f:facet>
+                                                    <h:outputText value="#{t.idProducto.nombre}"/>
+                                                </h:column>
+                                                <h:column>
                                                     <f:facet name="header">Empleado</f:facet>
-                                                    <h:outputText value="#{t.idEmpleadoPed.nombres}"/>
+                                                    <h:outputText value="#{t.idEmpleadoPro.idEmpleados}"/>
                                                 </h:column>
                                                 <h:column>
-                                                    <f:facet name="header">Cliente</f:facet>
-                                                    <h:outputText value="#{t.idClientePed.razonSocial}"/>
-                                                </h:column>
-                                                <h:column>
-                                                    <f:facet name="header">N° Factura</f:facet>
-                                                    <h:outputText value="#{t.numeroFactura}"/>
-                                                </h:column>
-                                                <h:column>
-                                                    <f:facet name="header">Valor</f:facet>
-                                                    <h:outputText value="#{t.valor}"/>
-                                                </h:column>
-                                                <h:column>
-                                                    <f:facet name="header">Conductor</f:facet>
-                                                    <h:outputText value="#{t.idConductor.nombres}"/>
-                                                </h:column> 
-                                                <h:column>
-                                                    <f:facet name="header">Acciones</f:facet>
-                                                    <h:form>
-                                                        <h:commandButton class="btn btn-outline-primary mr-1" value="Actualizar"></h:commandButton>
+                                                    <f:facet name="header">
+                                                        <h:outputText value="Acciones"/>
+                                                    </f:facet>
+                                                    <h:form class="accion">
+                                                        <h:commandLink action="#{controllerProduccion.eliminarProduccion(t)}">
+                                                            <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+                                                            <lord-icon
+                                                                src="https://cdn.lordicon.com/jmkrnisz.json"
+                                                                trigger="hover"
+                                                                style="width:2rem;height:2rem">
+                                                            </lord-icon>
+                                                        </h:commandLink>
                                                     </h:form>
-                                                    <h:form>
-                                                        <h:commandButton class="btn btn-outline-primary ml-1" value="Eliminar"></h:commandButton>
+                                                    <h:form class="accion">
+                                                        <h:commandLink action="#{controllerProduccion.actualizarProduccion(t)}">
+                                                            <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+                                                            <lord-icon
+                                                                src="https://cdn.lordicon.com/nxooksci.json"
+                                                                trigger="hover"
+                                                                style="width:2rem;height:2rem">
+                                                            </lord-icon>
+                                                        </h:commandLink>
                                                     </h:form>
                                                 </h:column>
                                             </h:dataTable>

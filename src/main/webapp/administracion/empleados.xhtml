@@ -117,18 +117,27 @@
                                                 </h:column>
                                                 <h:column>
                                                     <f:facet name="header">
-                                                        <h:outputText value="Action"/>
+                                                        <h:outputText value="Acciones"/>
                                                     </f:facet>
-                                                    <h:form>
-                                                        <h:commandLink value="update" action="#{controllerRegistrarEmpleados.actualizarEmpleado(t)}"/>
+                                                    <h:form class="accion">
+                                                        <h:commandLink action="#{controllerRegistrarEmpleados.eliminarEmple(t)}">
+                                                            <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+                                                            <lord-icon
+                                                                src="https://cdn.lordicon.com/jmkrnisz.json"
+                                                                trigger="hover"
+                                                                style="width:2rem;height:2rem">
+                                                            </lord-icon>
+                                                        </h:commandLink>
                                                     </h:form>
-                                                </h:column>
-                                                <h:column>
-                                                    <f:facet name="header">
-                                                        <h:outputText value="Action"/>
-                                                    </f:facet>
-                                                    <h:form>
-                                                        <h:commandLink value="delete" action="#{controllerRegistrarEmpleados.eliminarEmple(t)}"/>
+                                                    <h:form class="accion">
+                                                        <h:commandLink action="#{controllerRegistrarEmpleados.actualizarEmpleado(t)}">
+                                                            <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+                                                            <lord-icon
+                                                                src="https://cdn.lordicon.com/nxooksci.json"
+                                                                trigger="hover"
+                                                                style="width:2rem;height:2rem">
+                                                            </lord-icon>
+                                                        </h:commandLink>
                                                     </h:form>
                                                 </h:column>
                                             </h:dataTable>

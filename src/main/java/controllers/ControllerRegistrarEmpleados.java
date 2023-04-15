@@ -33,13 +33,14 @@ public class ControllerRegistrarEmpleados implements Serializable {
     public ControllerRegistrarEmpleados() {
     }
 //CREATE
-    public void guardarEmpleado(){
+    public String guardarEmpleado(){
         try{
             empleados.setIdCargo(rolFacade.find(rol.getIdCargo()));
             empleadosFacade.create(empleados);
         }catch (Exception e) {
             System.out.println(e.getMessage());
         }
+        return "registroEmpleados.xhtml";
     }
 //READ
     public List<Empleados> listaEmpleados(){
@@ -52,8 +53,9 @@ public class ControllerRegistrarEmpleados implements Serializable {
     }
     
     public String actualizarEmpleado(){
+        rol.setIdCargo(empleados.getIdCargo().getIdCargo());
+        empleados.setIdCargo(rol);
         this.empleadosFacade.edit(empleados);
-        this.empleados = empleados;
         return "empleados.xhtml";
     }
 //DELETE

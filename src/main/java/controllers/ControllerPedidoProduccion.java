@@ -4,6 +4,7 @@
  */
 package controllers;
 
+import entities.ActualizacionPedido;
 import entities.ClienteProveedor;
 import entities.Empleados;
 import entities.PedidoProduccion;
@@ -12,14 +13,11 @@ import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 import java.util.List;
 import javax.ejb.EJB;
+import services.ActualizacionPedidoFacade;
 import services.ClienteProveedorFacade;
 import services.EmpleadosFacade;
 import services.PedidoProduccionFacade;
 
-/**
- *
- * @author brhay
- */
 @Named(value = "controllerPedidoProduccion")
 @SessionScoped
 public class ControllerPedidoProduccion implements Serializable {
@@ -33,13 +31,16 @@ public class ControllerPedidoProduccion implements Serializable {
     private ClienteProveedor clipro = new ClienteProveedor();
     @EJB
     private ClienteProveedorFacade cliproFacade;
+    private ActualizacionPedido actPed = new ActualizacionPedido();
+    @EJB
+    private ActualizacionPedidoFacade actPedFacade;
 
     public ControllerPedidoProduccion() {
     }
 
     //CREATE
     public String guardarEmpleado() {
-        try {
+        try {            
             pedido.setIdEmpleadoPed(empleadoFacade.find(empleado.getIdEmpleados()));
             pedido.setIdClientePed(cliproFacade.find(clipro.getIdClienteProveedor()));
             pedido.setIdConductor(empleadoFacade.find(empleado.getIdEmpleados()));
@@ -53,6 +54,10 @@ public class ControllerPedidoProduccion implements Serializable {
     public List<PedidoProduccion> listaPedidos() {
         return pedidoFacade.findAll();
     }
+    
+    public List<ActualizacionPedido> listaPedidosActu(){
+        return actPedFacade.findAll();
+    }
 //UPDATE
 
     public String actualizarPedido(PedidoProduccion e) {
@@ -62,13 +67,13 @@ public class ControllerPedidoProduccion implements Serializable {
 
     public String actualizarPedido() {
         PedidoProduccion pedAct = this.pedidoFacade.find(this.pedido.getIdPedido());
-        empleado.setIdEmpleados(1);
+        empleado.setIdEmpleados(pedido.getIdEmpleadoPed().getIdEmpleados());
         pedAct.setIdEmpleadoPed(empleado);
-        clipro.setIdClienteProveedor(1);
+        clipro.setIdClienteProveedor(pedido.getIdClientePed().getIdClienteProveedor());
         pedAct.setIdClientePed(clipro);
         pedAct.setNumeroFactura(this.pedido.getNumeroFactura());
         pedAct.setValor(this.pedido.getValor());
-        empleado.setIdEmpleados(1);
+        empleado.setIdEmpleados(pedido.getIdConductor().getIdEmpleados());
         pedAct.setIdConductor(empleado);
         
         pedAct.setIdConductor(this.pedido.getIdConductor());
@@ -77,28 +82,7 @@ public class ControllerPedidoProduccion implements Serializable {
 
         return "ListadePedidos.xhtml";
     }
-
-
-    /*
     
-    
-    public String actualizarPedido() {
-    // Obtener el pedido que se va a actualizar
-    PedidoProduccion pedidoActualizado = this.pedidoFacade.find(this.pedido.getId());
-
-    // Asignar los nuevos valores al pedido actualizado
-    pedidoActualizado.setNombreCliente(this.pedido.getNombreCliente());
-    pedidoActualizado.setFechaPedido(this.pedido.getFechaPedido());
-    pedidoActualizado.setDescripcion(this.pedido.getDescripcion());
-    pedidoActualizado.setCantidad(this.pedido.getCantidad());
-    // etc.
-
-    // Actualizar el pedido en la base de datos
-    this.pedidoFacade.edit(pedidoActualizado);
-}
-
-    
-     */
 //DELETE
     public String eliminarPedido(PedidoProduccion pedido) {
         this.pedidoFacade.remove(pedido);

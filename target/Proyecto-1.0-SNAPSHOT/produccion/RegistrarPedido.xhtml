@@ -58,6 +58,9 @@
                         <h:link outcome="ListadeProduccion.xhtml" class="list-group-item list-group-item-action py-2 ripple mt-2">
                             <i class="fa-solid fa-list-check me-3"></i><span>Lista de Produccion</span>
                         </h:link>
+                        <h:link outcome="ListaActualizacionPed.xhtml" class="list-group-item list-group-item-action py-2 ripple mt-2">
+                            <i class="fa-solid fa-list-check me-3"></i><span>Pedidos Actualizados</span>
+                        </h:link>
                     </nav>
                 </div>
                 <div class='dashboard-app'>
@@ -90,7 +93,7 @@
                                             <div class="col-md-4">
                                                 <div class="form-label">
                                                     <label>Id Empleado</label>
-                                                    <h:inputText value="#{controllerPedidoProduccion.pedido.idEmpleadoPed}"
+                                                    <h:inputText value="#{controllerPedidoProduccion.empleado.idEmpleados}"
                                                                  class="form-control" a:placeholder="Id Empleado"
                                                                  id="idempleado" requiredMessage="Campo Obligatorio"
                                                                  required="true">
@@ -101,7 +104,7 @@
                                             <div class="col-md-4">
                                                 <div class="form-label">
                                                     <label>Id Cliente</label>
-                                                    <h:inputText value="#{controllerPedidoProduccion.pedido.idClientePed}"
+                                                    <h:inputText value="#{controllerPedidoProduccion.clipro.idClienteProveedor}"
                                                                  class="form-control" a:placeholder="Id Cliente"
                                                                  id="idcliente" requiredMessage="Campo Obligatorio"
                                                                  required="true">
@@ -135,7 +138,7 @@
                                             <div class="col-md-4">
                                                 <div class="form-label">
                                                     <label>Id Conductor</label>
-                                                    <h:inputText value="#{controllerPedidoProduccion.pedido.idConductor}"
+                                                    <h:inputText value="#{controllerPedidoProduccion.empleado.idEmpleados}"
                                                                  class="form-control" a:placeholder="Id Conductor"
                                                                  id="idconductor" requiredMessage="Campo Obligatorio"
                                                                  required="true">

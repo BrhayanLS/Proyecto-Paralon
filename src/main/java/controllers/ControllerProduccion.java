@@ -47,8 +47,22 @@ public class ControllerProduccion implements Serializable {
         return producFacade.findAll();
     }
     
-    //UPDATE
-    
+    //UPDATE    
+    public String actualizarProduccion(Produccion e) {
+        this.produc = e;
+        return "ActualizarPedidos.xhtml";
+    }
+
+    public String actualizarProduccion() {
+        Produccion proAct = this.producFacade.find(this.produc.getIdProduccion());
+        empleado.setIdEmpleados(produc.getIdEmpleadoPro().getIdEmpleados());
+        proAct.setIdEmpleadoPro(empleado);
+        producPro.setIdProducto(produc.getIdProducto().getIdProducto());
+        proAct.setIdProducto(producPro);
+        
+        this.producFacade.edit(proAct);
+        return "ListadeProduccion.xhtml";
+    }
     
     //DELETE
     public String eliminarProduccion(Produccion produc){

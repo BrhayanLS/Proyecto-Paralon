@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSF/JSFManagedBean.java to edit this template
- */
 package controllers;
 
 import entities.ClienteProveedor;
@@ -17,10 +13,6 @@ import javax.faces.component.UIInput;
 import javax.faces.context.FacesContext;
 import services.ClienteProveedorFacade;
 
-/**
- *
- * @author brhay
- */
 @Named(value = "controllerClientes")
 @SessionScoped
 public class ControllerClientes implements Serializable {

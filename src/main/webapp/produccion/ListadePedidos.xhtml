@@ -58,6 +58,9 @@
                         <h:link outcome="ListadeProduccion.xhtml" class="list-group-item list-group-item-action py-2 ripple mt-2">
                             <i class="fa-solid fa-list-check me-3"></i><span>Lista de Produccion</span>
                         </h:link>
+                        <h:link outcome="ListaActualizacionPed.xhtml" class="list-group-item list-group-item-action py-2 ripple mt-2">
+                            <i class="fa-solid fa-list-check me-3"></i><span>Pedidos Actualizados</span>
+                        </h:link>
                     </nav>
                 </div>
                 <div class='dashboard-app'>
@@ -120,7 +123,7 @@
                                                     <f:facet name="header">
                                                         <h:outputText value="Acciones"/>
                                                     </f:facet>
-                                                    <h:form class="action">
+                                                    <h:form class="accion">
                                                         <h:commandLink action="#{controllerPedidoProduccion.eliminarPedido(t)}">
                                                             <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
                                                             <lord-icon
@@ -130,9 +133,14 @@
                                                             </lord-icon>
                                                         </h:commandLink>
                                                     </h:form>
-                                                    <h:form class="action">
-                                                        <h:commandLink class="h-action" action="#{controllerPedidoProduccion.actualizarPedido(t)}">
-                                                            <i class="fa-solid fa-pen-to-square i-action"></i>
+                                                    <h:form class="accion">
+                                                        <h:commandLink action="#{controllerPedidoProduccion.actualizarPedido(t)}">
+                                                            <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+                                                            <lord-icon
+                                                                src="https://cdn.lordicon.com/nxooksci.json"
+                                                                trigger="hover"
+                                                                style="width:2rem;height:2rem">
+                                                            </lord-icon>
                                                         </h:commandLink>
                                                     </h:form>
                                                 </h:column>

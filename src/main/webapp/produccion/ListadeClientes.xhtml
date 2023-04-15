@@ -57,6 +57,9 @@
                         </h:link>
                         <h:link outcome="ListadeProduccion.xhtml" class="list-group-item list-group-item-action py-2 ripple mt-2">
                             <i class="fa-solid fa-list-check me-3"></i><span>Lista de Produccion</span>
+                        </h:link>                        
+                        <h:link outcome="ListaActualizacionPed.xhtml" class="list-group-item list-group-item-action py-2 ripple mt-2">
+                            <i class="fa-solid fa-list-check me-3"></i><span>Pedidos Actualizados</span>
                         </h:link>
                     </nav>
                 </div>
@@ -126,9 +129,9 @@
                                                 </h:column>
                                                 <h:column>
                                                     <f:facet name="header">
-                                                        <h:outputText value="Eliminar"/>
+                                                        <h:outputText value="Acciones"/>
                                                     </f:facet>
-                                                    <h:form>
+                                                    <h:form class="accion">
                                                         <h:commandLink action="#{controllerClientes.eliminarCliente(t)}">
                                                             <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
                                                             <lord-icon
@@ -138,12 +141,7 @@
                                                             </lord-icon>
                                                         </h:commandLink>
                                                     </h:form>
-                                                </h:column>
-                                                <h:column>
-                                                    <f:facet name="header">
-                                                        <h:outputText value="Actualizar"/>
-                                                    </f:facet>
-                                                    <h:form>
+                                                    <h:form class="accion">
                                                         <h:commandLink action="#{controllerClientes.actualizarCliente(t)}">
                                                             <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
                                                             <lord-icon
